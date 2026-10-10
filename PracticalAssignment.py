@@ -1,4 +1,3 @@
-
 class Node:
     def __init__(self, data):
         self.data = data
@@ -107,6 +106,7 @@ class LinkedList:
         current = self.head
 
         while current:
+            
             next_node = current.next
             current.next = prev
             prev = current
@@ -145,6 +145,7 @@ list.print_list()
 # 3. Insert node at position 2
 list.insert(100, 2)
 print("\nAfter Inserting 100 at Position 2:")
+
 list.print_list()
 
 # 4. Find middle node
@@ -164,4 +165,3 @@ list.print_list()
 # 7. Sum of every two consecutive node values
 print("\nSum of Every Two Consecutive Nodes:")
 list.sum_consecutive()
-
