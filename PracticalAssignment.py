@@ -106,7 +106,7 @@ class LinkedList:
         current = self.head
 
         while current:
-            
+
             next_node = current.next
             current.next = prev
             prev = current
@@ -165,3 +165,4 @@ list.print_list()
 # 7. Sum of every two consecutive node values
 print("\nSum of Every Two Consecutive Nodes:")
 list.sum_consecutive()
+		 
