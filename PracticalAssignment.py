@@ -129,7 +129,7 @@ class LinkedList:
             temp = temp.next
 
 
-# Main program
+# Main Program
 list = LinkedList()
 
 # 1. Create Linked List
@@ -139,7 +139,7 @@ list.append(30)
 list.append(55)
 list.append(48)
 
-# 2. Traverse and print
+# 2. Traverse and print node values
 print("Original Linked List:")
 list.print_list()
 
@@ -162,14 +162,7 @@ list.reverse()
 print("\nAfter Reversing:")
 list.print_list()
 
-# 7. Sum of consecutive nodes
+# 7. Sum of every two consecutive node values
 print("\nSum of Every Two Consecutive Nodes:")
 list.sum_consecutive()
-
-
-
-
-
-
-
 
