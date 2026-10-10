@@ -164,3 +164,4 @@ list.print_list()
 # 7. Sum of every two consecutive node values
 print("\nSum of Every Two Consecutive Nodes:")
 list.sum_consecutive()
+
