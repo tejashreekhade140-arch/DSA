@@ -1,3 +1,4 @@
+
 class Node:
     def __init__(self, data):
         self.data = data
@@ -35,7 +36,7 @@ class LinkedList:
 
         print("None")
 
-# 3. Insert node at a specific position
+    # 3. Insert node at a specific position
     def insert(self, data, pos):
         newnode = Node(data)
 
@@ -76,9 +77,6 @@ class LinkedList:
             fast = fast.next.next
 
         print("Middle node:", slow.data)
-
-
-
 
     # 5. Delete node by value
     def del_node(self, value):
@@ -124,9 +122,7 @@ class LinkedList:
             print("At least two nodes are required")
             return
 
-        
-
-while temp and temp.next:
+        while temp and temp.next:
             total = temp.data + temp.next.data
             print(temp.data, "+", temp.next.data, "=", total)
             temp = temp.next
