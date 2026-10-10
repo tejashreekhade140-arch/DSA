@@ -1,9 +1,7 @@
-
 class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
-
 
 class LinkedList:
     def __init__(self):
@@ -37,7 +35,7 @@ class LinkedList:
 
         print("None")
 
-    # 3. Insert node at a specific position
+# 3. Insert node at a specific position
     def insert(self, data, pos):
         newnode = Node(data)
 
@@ -78,6 +76,9 @@ class LinkedList:
             fast = fast.next.next
 
         print("Middle node:", slow.data)
+
+
+
 
     # 5. Delete node by value
     def del_node(self, value):
@@ -123,7 +124,9 @@ class LinkedList:
             print("At least two nodes are required")
             return
 
-        while temp and temp.next:
+        
+
+while temp and temp.next:
             total = temp.data + temp.next.data
             print(temp.data, "+", temp.next.data, "=", total)
             temp = temp.next
@@ -165,4 +168,3 @@ list.print_list()
 # 7. Sum of every two consecutive node values
 print("\nSum of Every Two Consecutive Nodes:")
 list.sum_consecutive()
-
