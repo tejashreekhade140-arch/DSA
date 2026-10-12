@@ -8,7 +8,6 @@ class Node:
 class LinkedList:
     def __init__(self):
         self.head = None
-
     # Append node at the end
     def append(self, data):
         newnode = Node(data)
