@@ -1,10 +1,8 @@
-
 # Node class
 class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
-
 
 # Linked List class
 class LinkedList:
@@ -127,7 +125,6 @@ class LinkedList:
 
         print()
 
-
 # Main program
 list1 = LinkedList()
 
@@ -171,3 +168,4 @@ list2.append(80)
 
 list1.concatenate(list2)
 list1.print()
+
