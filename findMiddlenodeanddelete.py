@@ -21,7 +21,6 @@ class LinkedList:
             temp = temp.next
 
         temp.next = newnode
-
     # Reverse a linked list
     def reverse(self):
         prev = None
