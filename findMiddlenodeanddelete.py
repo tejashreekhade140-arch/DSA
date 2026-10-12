@@ -1,74 +1,173 @@
-#find middle node and delete this node 
+
+# Node class
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+# Linked List class
 class LinkedList:
-    def reverse(self):#Reversing a Linked List
-        prev=self.head
+    def __init__(self):
+        self.head = None
+
+    # Append node at the end
+    def append(self, data):
+        newnode = Node(data)
+
+        if self.head is None:
+            self.head = newnode
+            return
+
+        temp = self.head
+        while temp.next:
+            temp = temp.next
+
+        temp.next = newnode
+
+    # Reverse a linked list
+    def reverse(self):
+        prev = None
+        temp = self.head
+
+        while temp:
+            nextnode = temp.next
+            temp.next = prev
+            prev = temp
+            temp = nextnode
+
+        self.head = prev
+
+    # Find and delete the middle node
     def findmid_del(self):
-        temp= temp1=self.head
-        prev=None
-        while temp1 and temp1.next:
-            prev=temp
-            temp=temp.next
-            temp1=temp1.next.next
-        print("Middle Node:", temp.data)
+        if self.head is None:
+            print("List is empty")
+            return
 
-        prev.next=temp.next
-        temp=None
+        if self.head.next is None:
+            self.head = None
+            return
 
-#Write a function to delete first and last node in SLL
+        slow = self.head
+        fast = self.head
+        prev = None
+
+        while fast and fast.next:
+            prev = slow
+            slow = slow.next
+            fast = fast.next.next
+
+        print("Middle Node:", slow.data)
+        prev.next = slow.next
+        slow = None
+
+    # Delete first and last nodes
     def delfirst_last(self):
-        #First Node
-        temp1=self.head
-        temp1=None
-        prev=None
-        temp=self.head=self.head.next
-        while(temp.next):
-            prev=temp
-            temp=temp.next
-        # delete last Node
-        prev.next=None
-        temp=None
-  
-#Delete Alternate Nodes in SLL
-def del_alternate(self):
-    prev=self.head
-    temp=self.head.next
-    while pre and temp:
-        prev.next=temp.next
-        temp=None #delete the node
-        prev=prev.next
-        if prev:
-            temp=prev.next
-#Calculate two SLLs
-#Merge Sort
-def concatenate(self):
-    temp=self.head
-    while(temp.next):
-        temp=temp.next
-    temp.newnode=list2.head
+        if self.head is None:
+            print("List is empty")
+            return
 
-def print(self):
-    print()
-    print("List Elements:")
-    temp=self.head
-    while(temp):
-        print(temp.data, end=" ")
+        # Delete first node
+        self.head = self.head.next
 
-list1=LinkedList()
-n1=Node(10)
-n2=Node(20)
+        if self.head is None:
+            return
+
+        # Find last node
+        temp = self.head
+        prev = None
+
+        while temp.next:
+            prev = temp
+            temp = temp.next
+
+        # Delete last node
+        prev.next = None
+
+    # Delete alternate nodes
+    def del_alternate(self):
+        if self.head is None:
+            return
+
+        prev = self.head
+        temp = self.head.next
+
+        while prev and temp:
+            prev.next = temp.next
+            temp = None
+
+            prev = prev.next
+
+            if prev:
+                temp = prev.next
+
+    # Concatenate two linked lists
+    def concatenate(self, list2):
+        if list2.head is None:
+            return
+
+        if self.head is None:
+            self.head = list2.head
+            return
+
+        temp = self.head
+        while temp.next:
+            temp = temp.next
+
+        temp.next = list2.head
+
+    # Print linked list
+    def print(self):
+        print("List Elements:")
+
+        temp = self.head
+        while temp:
+            print(temp.data, end=" ")
+            temp = temp.next
+
+        print()
+
+
+# Main program
+list1 = LinkedList()
+
 list1.append(30)
 list1.append(40)
 list1.append(50)
 list1.append(55)
+
+print("Original List:")
 list1.print()
+
+print("\nAfter Reversing:")
 list1.reverse()
 list1.print()
+
+print("\nAfter Deleting First and Last Nodes:")
 list1.delfirst_last()
 list1.print()
+
+print("\nAfter Deleting Alternate Nodes:")
 list1.del_alternate()
 list1.print()
-list2.append(33)
-list2.append(44)
-list2.append(55)
-list2.append(56)
-list2.concatenate()
+
+print("\nMiddle Node Deletion Example:")
+list3 = LinkedList()
+list3.append(10)
+list3.append(20)
+list3.append(30)
+list3.append(40)
+list3.append(50)
+list3.print()
+
+list3.findmid_del()
+list3.print()
+
+print("\nConcatenation Example:")
+list2 = LinkedList()
+list2.append(60)
+list2.append(70)
+list2.append(80)
+
+list1.concatenate(list2)
+list1.print()
