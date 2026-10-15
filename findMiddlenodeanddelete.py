@@ -1,14 +1,17 @@
+
 # Node class
 class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
 
+
 # Linked List class
 class LinkedList:
     def __init__(self):
         self.head = None
-    # Append node at the end
+
+    # 1. Append node at the end
     def append(self, data):
         newnode = Node(data)
 
@@ -17,11 +20,13 @@ class LinkedList:
             return
 
         temp = self.head
+
         while temp.next:
             temp = temp.next
 
         temp.next = newnode
-    # Reverse a linked list
+
+    # 2. Reverse a linked list
     def reverse(self):
         prev = None
         temp = self.head
@@ -34,13 +39,14 @@ class LinkedList:
 
         self.head = prev
 
-    # Find and delete the middle node
+    # 3. Find and delete the middle node
     def findmid_del(self):
         if self.head is None:
             print("List is empty")
             return
 
         if self.head.next is None:
+            print("Middle Node:", self.head.data)
             self.head = None
             return
 
@@ -53,11 +59,10 @@ class LinkedList:
             slow = slow.next
             fast = fast.next.next
 
-        print("Middle Node:", slow.data)
+        print("Middle Node Deleted:", slow.data)
         prev.next = slow.next
-        slow = None
 
-    # Delete first and last nodes
+    # 4. Delete first and last nodes
     def delfirst_last(self):
         if self.head is None:
             print("List is empty")
@@ -66,10 +71,11 @@ class LinkedList:
         # Delete first node
         self.head = self.head.next
 
+        # If the list is now empty
         if self.head is None:
             return
 
-        # Find last node
+        # Find the last node
         temp = self.head
         prev = None
 
@@ -80,48 +86,60 @@ class LinkedList:
         # Delete last node
         prev.next = None
 
-    # Delete alternate nodes
+    # 5. Delete alternate nodes
+    # Keeps nodes at positions 1, 3, 5, ...
     def del_alternate(self):
         if self.head is None:
+            print("List is empty")
             return
 
         prev = self.head
         temp = self.head.next
 
-        while prev and temp:
+        while temp:
             prev.next = temp.next
-            temp = None
+            temp = prev.next
 
-            prev = prev.next
-
-            if prev:
+            if temp:
+                prev = temp
                 temp = prev.next
 
-    # Concatenate two linked lists
+    # 6. Concatenate two linked lists
     def concatenate(self, list2):
         if list2.head is None:
             return
 
         if self.head is None:
             self.head = list2.head
+            list2.head = None
             return
 
         temp = self.head
+
         while temp.next:
             temp = temp.next
 
         temp.next = list2.head
 
-    # Print linked list
+        # Transfer nodes to list1
+        list2.head = None
+
+    # 7. Print linked list
     def print(self):
-        print("List Elements:")
+        if self.head is None:
+            print("List is empty")
+            return
+
+        print("List Elements:", end=" ")
 
         temp = self.head
+
         while temp:
             print(temp.data, end=" ")
             temp = temp.next
 
         print()
+
 
 # Main program
 list1 = LinkedList()
@@ -153,6 +171,7 @@ list3.append(20)
 list3.append(30)
 list3.append(40)
 list3.append(50)
+
 list3.print()
 
 list3.findmid_del()
@@ -166,4 +185,3 @@ list2.append(80)
 
 list1.concatenate(list2)
 list1.print()
-
