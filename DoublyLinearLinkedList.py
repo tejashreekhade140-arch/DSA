@@ -1,46 +1,94 @@
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.prev = None
+        self.next = None
+
+
 class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    # Append node at the end
     def append(self, new_node):
-    if
-        new_node.prev=temp
-    else:
-        self.head=new_node
-
-    def insert(self, new_node ,pos):
-        temp=self.head
-        if pos==1:
-            new_node.next= self.head
-            self.head.prev=new_node
-            self.head=new_node
+        if self.head is None:
+            self.head = new_node
         else:
-            p=1
-            while(p!=pos-1):
-                temp=temp.next
-                p+=1
-            temp.next=new_node
-            new_node.prev=temp
-            new_node.next=temp
-            if temp.next:# Last position
-                temp.next.prev=new_node
+            temp = self.head
 
+            while temp.next:
+                temp = temp.next
 
+            temp.next = new_node
+            new_node.prev = temp
+
+    # Insert node at a given position
+    def insert(self, new_node, pos):
+        if pos < 1:
+            print("Invalid position")
+            return
+
+        # Insert at the beginning
+        if pos == 1:
+            new_node.next = self.head
+
+            if self.head is not None:
+                self.head.prev = new_node
+
+            self.head = new_node
+            return
+
+        # Find the previous node
+        temp = self.head
+        p = 1
+
+        while temp is not None and p < pos - 1:
+            temp = temp.next
+            p += 1
+
+        if temp is None:
+            print("Invalid position")
+            return
+
+        # Connect the new node
+        new_node.next = temp.next
+        new_node.prev = temp
+
+        if temp.next is not None:
+            temp.next.prev = new_node
+
+        temp.next = new_node
+
+    # Print nodes in forward order
     def print(self):
-        temp=self.head
-        print("List elements:", end=" ")        
+        temp = self.head
+
+        print("List elements:", end=" ")
+
+        while temp:
+            print(temp.data, end=" ")
+            temp = temp.next
+
+        print()
 
 
 # Create LinkedList object
 list = LinkedList()
 
-# Create nodes
-n1 = Node(10)
-n2 = Node(20)
-n3 = Node(30)
-
 # Append nodes
-list.append(n1)
-list.append(n2)
-list.append(n3)
+list.append(Node(10))
+list.append(Node(20))
+list.append(Node(30))
 list.append(Node(55))
 list.append(Node(48))
+
+# Display the list
 list.print()
 
+# Insert 15 at position 2
+list.insert(Node(15), 2)
+
+# Display after insertion
+print("After insertion:")
+list.print()
