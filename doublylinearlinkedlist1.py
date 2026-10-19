@@ -83,7 +83,28 @@ class LinkedList:
             if temp.next:
                 temp.next.prev=temp.prev
             temp=None
-            
+    # Write a function to count occurence of a no.in the DLL
+    def count_occurence(self):
+        temp=self.head
+        while temp:
+            if temp.data==num:
+                count+=1
+            temp=temp.next
+        print("The occuernce :",Count)
+
+    #Write function to swap 1 and last node in DLL
+    def swap_firandlast(self):
+        temp=node1=self.head # node1 is first node and 
+        while temp.next: #temp is last node
+            temp=temp.next
+
+        temp.next=node1.next
+        node1.next=None
+        node1.prev=temp.prev
+        temp.prev.next=node1
+        temp.prev=None
+        self.head=temp
+
 
         
     # Print nodes in forward order
@@ -103,9 +124,9 @@ class LinkedList:
 list = LinkedList()
 
 # Append nodes
-list.append(Node(10))
+list.append(Node(12))
 list.append(Node(20))
-list.append(Node(30))
+list.append(Node(12))
 list.append(Node(55))
 list.append(Node(48))
 
@@ -114,9 +135,17 @@ list.print()
 
 # Delete Data
 list.del_node(48)
+
+
+
+list.swap_firandlast()
+list.print()
+
 # Insert 15 at position 2
 list.insert(Node(15), 2)
 
 # Display after insertion
 print("After insertion:")
 list.print()
+
+# Write a function to count occurence of a no.in the DLL
