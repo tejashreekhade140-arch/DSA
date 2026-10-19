@@ -84,13 +84,14 @@ class LinkedList:
                 temp.next.prev=temp.prev
             temp=None
     # Write a function to count occurence of a no.in the DLL
-    def count_occurence(self):
+    def count_occurence(self,num):
+        count=0
         temp=self.head
         while temp:
             if temp.data==num:
                 count+=1
             temp=temp.next
-        print("The occuernce :",Count)
+        print("The occuernce :",count)
 
     #Write function to swap 1 and last node in DLL
     def swap_firandlast(self):
@@ -136,7 +137,7 @@ list.print()
 # Delete Data
 list.del_node(48)
 
-
+list.count_occurence(12)
 
 list.swap_firandlast()
 list.print()
