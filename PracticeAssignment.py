@@ -55,13 +55,7 @@ class LinkedList:
 
         new_node.next = temp.next
         temp.next = new_node
-     # 4. Delete Alternate Nodes
-    def delete_alternate(self):
-        temp = self.head
-
-        while temp and temp.next:
-            temp.next = temp.next.next
-            temp = temp.next
+    
 
 ll = LinkedList()
 ll.append(10)
@@ -73,8 +67,4 @@ ll.traverse()
 
 ll.insert(25, 3)
 print("After Inserting 25 at Position 3:")
-ll.traverse()
-
-ll.delete_alternate()
-print("After Deleting Alternate Nodes:")
 ll.traverse()
