@@ -88,7 +88,15 @@ class LinkedList:
                 temp.next = temp.next.next
                 return
             temp = temp.next
+    def count_nodes(self):
+        count = 0
+        temp = self.head
 
+        while temp:
+            count += 1
+            temp = temp.next
+
+        return count
 # Main Program
 ll = LinkedList()
 
@@ -117,3 +125,5 @@ ll.delete_value(30)
 
 print("After Deleting 30:")
 ll.traverse()
+
+print("Total Nodes:", ll.count_nodes())
