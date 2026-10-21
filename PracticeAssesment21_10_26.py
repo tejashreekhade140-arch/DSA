@@ -32,7 +32,34 @@ class LinkedList:
 
         print("None")
 
-    
+    # 3. Insert at Specific Position
+    def insert_at_position(self, data, position):
+        if position < 1:
+            print("Invalid position")
+            return
+
+        new_node = Node(data)
+
+        if position == 1:
+            new_node.next = self.head
+            self.head = new_node
+            return
+
+        temp = self.head
+
+        for i in range(position - 2):
+            if temp is None:
+                print("Invalid position")
+                return
+            temp = temp.next
+
+        if temp is None:
+            print("Invalid position")
+            return
+
+        new_node.next = temp.next
+        temp.next = new_node
+
    
 
 
@@ -50,5 +77,8 @@ ll.traverse()
 print("\nTraversing Linked List:")
 ll.traverse()
 
-
+# Operation 3: Insert at Position
+ll.insert_at_position(25, 3)
+print("\nAfter Inserting 25 at Position 3:")
+ll.traverse()
 
