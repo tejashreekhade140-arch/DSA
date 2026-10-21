@@ -97,6 +97,21 @@ class LinkedList:
             temp = temp.next
 
         return count
+
+    def search(self, value):
+        temp = self.head
+        position = 1
+
+        while temp:
+            if temp.data == value:
+                print("Element found at position", position)
+                return
+
+            temp = temp.next
+            position += 1
+
+        print("Element not found")
+
 # Main Program
 ll = LinkedList()
 
@@ -127,3 +142,6 @@ print("After Deleting 30:")
 ll.traverse()
 
 print("Total Nodes:", ll.count_nodes())
+
+ll.search(50)
+ll.search(60)
