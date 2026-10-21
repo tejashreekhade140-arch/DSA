@@ -60,7 +60,18 @@ class LinkedList:
         new_node.next = temp.next
         temp.next = new_node
 
-   
+    # 4. Delete Nodes Having Negative Values
+    def delete_negative(self):
+        while self.head and self.head.data < 0:
+            self.head = self.head.next
+
+        temp = self.head
+
+        while temp and temp.next:
+            if temp.next.data < 0:
+                temp.next = temp.next.next
+            else:
+                temp = temp.next
 
 
 # Main Program
@@ -82,3 +93,7 @@ ll.insert_at_position(25, 3)
 print("\nAfter Inserting 25 at Position 3:")
 ll.traverse()
 
+# Operation 4: Delete Negative Values
+ll.delete_negative()
+print("\nAfter Deleting Negative Values:")
+ll.traverse()
