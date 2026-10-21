@@ -112,6 +112,27 @@ class LinkedList:
 
         print("Element not found")
 
+    def find_min_max(self):
+        if self.head is None:
+            print("Linked List is empty")
+            return
+
+        smallest = self.head.data
+        largest = self.head.data
+        temp = self.head
+
+        while temp:
+            if temp.data < smallest:
+                smallest = temp.data
+
+            if temp.data > largest:
+                largest = temp.data
+
+            temp = temp.next
+
+        print("Smallest Value:", smallest)
+        print("Largest Value:", largest)
+
 # Main Program
 ll = LinkedList()
 
@@ -145,3 +166,5 @@ print("Total Nodes:", ll.count_nodes())
 
 ll.search(50)
 ll.search(60)
+
+ll.find_min_max()
