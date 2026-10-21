@@ -73,6 +73,21 @@ class LinkedList:
             else:
                 temp = temp.next
 
+    def delete_value(self, data):
+        if self.head is None:
+            return
+
+        if self.head.data == data:
+            self.head = self.head.next
+            return
+
+        temp = self.head
+
+        while temp.next:
+            if temp.next.data == data:
+                temp.next = temp.next.next
+                return
+            temp = temp.next
 
 # Main Program
 ll = LinkedList()
@@ -96,4 +111,9 @@ ll.traverse()
 # Operation 4: Delete Negative Values
 ll.delete_negative()
 print("\nAfter Deleting Negative Values:")
+ll.traverse()
+
+ll.delete_value(30)
+
+print("After Deleting 30:")
 ll.traverse()
