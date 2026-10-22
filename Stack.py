@@ -40,9 +40,5 @@ st.push(Node(60))
 st.print()
 
 st.pop()
-st.pop()
-st.pop()
-st.pop()
-st.pop()
-st.pop()
+
 st.print()
