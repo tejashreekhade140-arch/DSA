@@ -1,0 +1,42 @@
+class Node:
+    def __init__(self, value):
+        self.data= value
+        self.next=None
+
+class LQueue:
+    def __init__(self):
+        self.front=self.rear=None
+
+    def enqueue(self, new_node):
+        if self.rear:
+            self.rear.next=new_node
+            self.rear=new_node
+        else:
+            self.front=self.rear=new_node
+    
+    def Dequeue(self):
+        temp=self.front
+        print("Deleted Node:",temp.data)
+        self.front=self.front.next
+
+        if self.front==None:
+            print("Queue is Empty Now")
+            self.rear=None
+        temp=None
+
+    def print(self):
+        temp=self.front
+        while temp:
+            print(temp.data,end="->")
+            temp=temp.next
+
+q=LQueue()
+q.enqueue(Node(23))
+q.enqueue(Node(22))
+q.enqueue(Node(24))
+q.enqueue(Node(25))
+q.print()
+q.Dequeue()
+q.Dequeue()
+q.Dequeue()
+q.Dequeue()

@@ -25,14 +25,16 @@ class Stack:
             self.top=self.top.next
             temp=None
 
-    #reverse the Stack
+    #reverse the Stack using another Stack
     def reverse(self):
         temp=self.top
         while temp:
             st1.push(Node(temp.data))
             #prev=temp
             temp=temp.next
-        
+    #Compare Two Stacks
+    def com_two_stacks(self):
+            
     def print(self):
         if self.isempty():
             print("Stack is Empty")
