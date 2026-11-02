@@ -22,6 +22,16 @@ class Stack:
             print("Poped Elements:", temp.value)
             self.top=self.top.next
             temp=None
+    
+
+
+    def reverse(self):
+        temp=self.top
+        print("Reverse Stack Using Another Stack:")
+        while temp:
+            
+            ss1.push(Node(temp.value))
+            temp=temp.next    
 
     def print(self):
         if self.isempty():
@@ -33,15 +43,20 @@ class Stack:
                 temp=temp.next
 
 ss=Stack()
+ss1=Stack()
 ss.push(Node(20))
 ss.push(Node(30))
 ss.push(Node(40))
+ss.push(Node(50))
+ss.push(Node(60))
+ss.push(Node(70))
+
 ss.print()
 
 ss.pop()
-ss.pop()
 
-ss.print()
+ss.reverse()
+ss1.print()
 
 
 
