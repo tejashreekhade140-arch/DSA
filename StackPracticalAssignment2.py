@@ -85,7 +85,7 @@ ss.print()
 print("\nPopped Element:", ss.pop())
 
 # Reverse string
-string = "PYTHON"
+string = "TEJASHREE"
 
 result = reverse_string(string)
 
