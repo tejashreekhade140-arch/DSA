@@ -1,3 +1,4 @@
+
 def is_balanced(expression):
     stack = []
     
@@ -30,3 +31,4 @@ if is_balanced(expression):
     print("Balanced")
 else:
     print("Not Balanced")
+
