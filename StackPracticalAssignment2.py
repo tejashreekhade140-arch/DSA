@@ -30,7 +30,6 @@ class Stack:
     # Reverse Stack using Another Stack
     def reverse(self):
         ss1 = Stack()
-
         temp = self.top
 
         while temp:
@@ -40,7 +39,7 @@ class Stack:
         return ss1
 
     # Display Stack elements
-    def print(self):
+    def display(self):
         if self.isempty():
             print("Stack is empty")
         else:
@@ -50,23 +49,28 @@ class Stack:
                 print(temp.value)
                 temp = temp.next
 
+    # Peek operation
+    def peek(self):
+        if self.isempty():
+            print("Stack is empty!")
+        else:
+            print("Top element:", self.top.value)
 
-# Reverse string using Stack
-def reverse_string(string):
+    # Reverse string using Stack
+    def reverse_string(self, string):
+        ss = Stack()
 
-    ss = Stack()
+        # Push every character into Stack
+        for char in string:
+            ss.push(Node(char))
 
-    # Push every character into Stack
-    for char in string:
-        ss.push(Node(char))
+        # Pop characters to create reversed string
+        reversed_string = ""
 
-    # Pop characters to create reversed string
-    reversed_string = ""
+        while not ss.isempty():
+            reversed_string += ss.pop()
 
-    while not ss.isempty():
-        reversed_string += ss.pop()
-
-    return reversed_string
+        return reversed_string
 
 
 # Main program
@@ -80,14 +84,13 @@ ss.push(Node(60))
 ss.push(Node(70))
 
 print("Original Stack:")
-ss.print()
+ss.display()
 
 print("\nPopped Element:", ss.pop())
 
 # Reverse string
 string = "TEJASHREE"
-
-result = reverse_string(string)
+result = ss.reverse_string(string)
 
 print("\nOriginal String:", string)
 print("Reversed String:", result)
@@ -96,4 +99,10 @@ print("Reversed String:", result)
 ss1 = ss.reverse()
 
 print("\nReversed Stack:")
-ss1.print()
+ss1.display()
+
+# Peek operation
+ss.peek()
+
+print("\nOriginal Stack after operations:")
+ss.display()
