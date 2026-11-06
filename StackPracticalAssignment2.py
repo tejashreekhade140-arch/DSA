@@ -103,6 +103,6 @@ ss1.display()
 
 # Peek operation
 ss.peek()
-
+ss.display()
 print("\nOriginal Stack after operations:")
 ss.display()
