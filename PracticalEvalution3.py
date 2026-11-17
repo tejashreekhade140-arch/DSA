@@ -1,4 +1,3 @@
-
 class node:
     def __init__(self, patient_id, name, priority):
         self.id = patient_id
@@ -84,7 +83,7 @@ pq = PriorityQueue()
 
 while True:
 
-    print("\n===== HOSPITAL EMERGENCY MANAGEMENT =====")
+    print("\n HOSPITAL EMERGENCY MANAGEMENT")
     print("1. Add Patient")
     print("2. Display Next Patient")
     print("3. Remove Treated Patient")
