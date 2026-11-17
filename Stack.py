@@ -34,7 +34,9 @@ class Stack:
             temp=temp.next
     #Compare Two Stacks
     def com_two_stacks(self):
-            
+
+    
+
     def print(self):
         if self.isempty():
             print("Stack is Empty")
