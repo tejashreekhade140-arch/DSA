@@ -54,6 +54,5 @@ pq.display()
 pq.dequeue()
 pq.dequeue()
 pq.dequeue()
-pq.dequeue()
-pq.dequeue()
+
 pq.display()
