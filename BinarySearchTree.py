@@ -27,13 +27,13 @@ class Binarysearchtree:
                         return
                     else:
                         temp=temp.right
-    def inorder(self,temp): # Recursive Method
-        if temp is None: #Terminating condition for recursive call
-            return
-        else:
-            self.inorder(temp.left)
-            print(temp.data, end=" ")
-            self.inorder(temp.right)
+def inorder(temp): # Recursive Method
+    if temp is None: #Terminating condition for recursive call
+        return
+    else:
+        inorder(temp.left)
+        print(temp.data, end=" ")
+        inorder(temp.right)
 
 bst=Binarysearchtree()
 bst.insert(Node(10))
@@ -43,5 +43,5 @@ bst.insert(Node(25))
 bst.insert(Node(13))
 bst.insert(Node(40))
 
-bst.inorder(bst.root)
+inorder(bst.root)
 
