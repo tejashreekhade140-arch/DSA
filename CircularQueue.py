@@ -25,7 +25,7 @@ class CircularQueue:
     # Delete element
     def dequeue(self):
 
-        if self.front is None:
+        if self.is_empty():
             print("Queue is Empty")
             return
 
@@ -39,10 +39,22 @@ class CircularQueue:
 
         print("Deleted:", deleted)
 
-    # Display elements
+    # Check whether queue is empty
+    def is_empty(self):
+        return self.front is None
+
+    # Display front element
+    def peek(self):
+
+        if self.is_empty():
+            print("Queue is Empty")
+        else:
+            print("Front Element:", self.front.data)
+
+    # Display queue
     def display(self):
 
-        if self.front is None:
+        if self.is_empty():
             print("Queue is Empty")
             return
 
@@ -69,12 +81,18 @@ q.enqueue(Node(40))
 print("Circular Queue:")
 q.display()
 
+print("\nPeek Operation:")
+q.peek()
+
+print("\nIs Empty:", q.is_empty())
+
+print("\nDequeue Operation:")
 q.dequeue()
 
-print("After Dequeue:")
+print("\nAfter Dequeue:")
 q.display()
 
+print("\nEnqueue Operation:")
 q.enqueue(Node(50))
 
-print("After Enqueue:")
 q.display()
