@@ -57,10 +57,14 @@ class Binarysearchtree:
             self.postorder(temp.right)
             print(temp.data,end=" ")
     def find_minmax(self,temp):
-        temp=root
-        while temp.left:
-            temp=temp.left
-        print("\nMim Value:",temp.data)
+        temmp=temp
+        while temmp.left:
+            temmp=temmp.left
+        print("\nMim Value:",temmp.data)
+        temmp=temp
+        while temmp.right:
+            temmp=temmp.right
+        print("\nMim Value:",temmp.data)
 """
 # Inorder Traversal (Left, Root, Right)  Outside the Class                    
 def inorder(temp): # Recursive Method
@@ -94,3 +98,4 @@ print("\nPreorder:")
 bst.preorder(bst.root)
 print("\nPostorder:")
 bst.postorder(bst.root)
+bst.find_minmax(bst.root)
