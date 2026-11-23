@@ -22,6 +22,7 @@ class Binarysearchtree:
                 if new_node.data<temp.data: # Left subtree
                     if temp.left is None:
                         temp.left=new_node
+                        self.cnt += 1
                         return
                     else:
                         temp=temp.left
@@ -39,7 +40,7 @@ class Binarysearchtree:
         else:
             self.inorder(temp.left)
             print(temp.data, end=" ")
-            if temp.left is None and temp.right is None:
+            if temp.left is not None and temp.right is not None:
                 self.lcnt+=1
             self.inorder(temp.right)
     def preorder(self,temp):
