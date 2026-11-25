@@ -97,6 +97,7 @@ class Binarysearchtree:
         while temmp.right:
             temmp=temmp.right
         print("\nMim Value:",temmp.data)
+        
 """
 # Inorder Traversal (Left, Root, Right)  Outside the Class                    
 def inorder(temp): # Recursive Method
