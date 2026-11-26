@@ -22,13 +22,14 @@ class Binarysearchtree:
                 if new_node.data<temp.data: # Left subtree
                     if temp.left is None:
                         temp.left=new_node
-                        self.cnt += 1
+                        self.lcnt += 1
                         return
                     else:
                         temp=temp.left
                 else:                       # Right Subtree
                     if temp.right is None:
                         temp.right=new_node
+                        self.cnt+=1
                         return
                     else:
                         temp=temp.right
@@ -97,7 +98,7 @@ class Binarysearchtree:
         while temmp.right:
             temmp=temmp.right
         print("\nMim Value:",temmp.data)
-        
+
 """
 # Inorder Traversal (Left, Root, Right)  Outside the Class                    
 def inorder(temp): # Recursive Method

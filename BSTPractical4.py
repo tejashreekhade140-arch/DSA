@@ -106,9 +106,9 @@ class BST:
 b = BST()
 
 # Insert Product IDs
-arr = [150, 100, 200, 75, 125, 175, 250, 60, 90, 110]
+PIDs = [150, 100, 200, 75, 125, 175, 250, 60, 90, 110]
 
-for i in arr:
+for i in PIDs:
     b.insert(Node(i))
 
 # Ascending Order
