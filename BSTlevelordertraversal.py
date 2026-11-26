@@ -49,16 +49,20 @@ class Binarysearchtree:
             return
         arr=[]
         cnt=0 #For counting visited Node
+        level=0
         arr.append(temp)
         while cnt<len(arr):
-            temmp=arr[cnt]
-            cnt+=1
-            print(temmp.data,end=" ")
-            if temmp.left:
-                arr.append(temmp.left)
-            if temmp.right:
-                arr.append(temmp.right)
-
+            node_count=len(arr)-cnt # No of nodes to be visited
+            print("\nLevel:",level,"nodes:",end=" ")
+            for i in range (node_count):
+                temmp=arr[cnt]
+                cnt+=1
+                print(temmp.data,end=" ")
+                if temmp.left:
+                    arr.append(temmp.left)
+                if temmp.right:
+                    arr.append(temmp.right)
+            level+=1
     
 bst=Binarysearchtree()
 bst.insert(Node(10))
@@ -68,14 +72,11 @@ bst.insert(Node(25))
 bst.insert(Node(13))
 bst.insert(Node(40))
 
-"""
-#Outside the class Call
-inorder(bst.root)
-"""
 print("\nInorder:")
 bst.inorder(bst.root)
 
 print("\nLevel order:")
 
 bst.level_order(bst.root)
+
 
