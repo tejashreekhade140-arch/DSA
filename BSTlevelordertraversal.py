@@ -63,6 +63,7 @@ class Binarysearchtree:
                 if temmp.right:
                     arr.append(temmp.right)
             level+=1
+        print("Height of the tree:",level-1)
     
 bst=Binarysearchtree()
 bst.insert(Node(10))
@@ -76,7 +77,7 @@ print("\nInorder:")
 bst.inorder(bst.root)
 
 print("\nLevel order:")
-
+ 
 bst.level_order(bst.root)
 
 
